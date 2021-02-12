@@ -49,6 +49,69 @@ function getSentenceArr(arr) {
     return str;
 }
 
+/*********** Überlegungen **********/
+/*
+1. Einer Variablen kann ihr eigener Wert zuwesiesen werden.
+Solange die Variable existiert, bleibt dieser erhalten.
+hier: Aufsummierung
+*/
+/*
+let a = 0; // Anfangswert
+ausgabe("inhalt von a: " + a);
+a = a + 1; // a = 0 + 1
+ausgabe("inhalt von a: " + a);
+a = a + 1; // a = 1 + 1
+ausgabe("inhalt von a: " + a);
+a = a + 1; // a = 2 + 1
+ausgabe("inhalt von a: " + a);
+*/
+/*
+let a = 0; // Anfangswert
+for (let i = 0; i < 4; i++) {
+    ausgabe("ausgabe aus der loop: " + a);  
+    a += 1; // a = 0 + 1
+}
+ausgabe("ausgabe nach der loop: " + a);
+*/
+/*
+2. Einer Variablen kann ihr eigener Wert zuwesiesen werden.
+Solange die Variable existiert, bleibt dieser erhalten.
+hier: Konkatenation(verkettung) eines Strings
+*/
+/*
+let str = ""; // Anfangswert
+let addStr = "Test";
+let gap = " ";
+let punct = ".";
+for (let i = 0; i < 4; i++) {
+    str += addStr + gap;
+}
+str = str + punct;
+ausgabe("Gesamter String: " + str);
+*/
+
+
+
+//*** 02b. Funktionalität mit Array */
+let arr = ["Ich","bin","Drazen","Savi"];
+ausgabe(getSentenceArr2(arr)); // Test
+function getSentenceArr2(arr) {
+    let gap = " ";
+    let punct = ".";
+    let str = "";
+
+    for (let i = 0; i < arr.length; i++) {
+        if (i != (arr.length-1)) {
+            str += arr[i] + gap;
+        } else {
+            str += arr[i] + punct;
+        }  
+    }
+    return str;
+}
+
+
+
 //*** 01. Funktionalität mit Einzelparametern */
 //ausgabe(getSentence("Ich","bin","Drazen","Savi")); // Test
 function getSentence(word1,word2,word3,word4) {
